@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: 
+  url("menu/wallhaven-x6ww2o.png") no-repeat center center fixed; 
+  background-size: cover;
+  min-height: 100vh;
+background-color: #ffffff67;
+  background-size: cover;
+  background-position: center;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(59, 59, 59),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.logo {
+  color: #000000;
+  font-style: unset;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
+.navbar a {
+  color: #000000;
+  font-style: inherit; 
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: rgb(255, 151, 39);
+}
+#menu-icon {
+  font-size: 36px;
+  color: #ffffff;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.25rem 4%;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 4%;
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+  }
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+  .nav-bg.active {
+    display: block;
+  }
+}
+
+
+#contactSection {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f934;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+}
+
+#contactSection h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+input:hover,
+textarea:hover {
+    background-color: #f5f5f5;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.contact-section {
+    margin-top: 100px;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fefae0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-description {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contact-info-box {
+    text-align: center;
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #eae2b7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95),
+        box-shadow 0.3s ease-in-out;
+}
+
+.contact-info-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+
+.contact-image:hover {
+    transform: scale(1.05);
+}
+
+.contact-info-title {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info-detail {
+    color: #555;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .contact-info-box {
+        flex-basis: 100%;
+    }
+}
+    

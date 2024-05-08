@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,200&display=swap');
+
+
+
+*,*::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+   /* font-family: "Poppins",sans-serif;*/
+   background: 
+   url("background/wallhaven-lqpy6y.jpg") no-repeat center center fixed, 
+   url("background/wallhaven-13rq19.jpg") no-repeat center center fixed; 
+   background-size: cover;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+   /* background-color: #333;*/
+}
+
+::selection{
+    background-color: #0b372dbb;
+}
+
+.logo{
+    width: 100px;
+}
+
+header{
+    position:fixed;
+    z-index: 9999;
+    width: 100%;
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header nav{
+   
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+
+header ul a{
+text-decoration: none;
+color: #FFF;
+padding: 0 1.5rem;
+text-transform: uppercase;
+font-weight: 300;
+font-size: 0.83rem;
+
+}
+
+.search a{
+    font-size: 1.05rem;
+    padding: 0 3rem;
+}
+
+.hambeger{
+    padding-left: 1.5rem;
+
+}
+
+.hambeger a{
+    padding: 0;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    border-radius: 50%;
+    background-color: rgba(115, 115, 115, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.hambeger.bar::before,
+.hambeger.bar::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 2px;
+}
+
+.hambeger.bar::before{
+    top: -4.5px;
+}
+
+.hambeger.bar::after{
+    top: 4.5px;
+
+}
+
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+.search {
+    margin-top: 20px;
+}
+
+.search_b {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+
+ul li a:hover{
+    background: #fff;
+    color: #333;
+
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; 
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+
+.social-icons {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.social-icons a {
+    color: #fff; 
+    text-decoration: none; 
+    margin: 0 10px; 
+    font-size: 24px; 
+}
+
+
+.social-icons a:hover {
+    color: #ffd700; 
+}
+
+
+form {
+    position: relative;
+    max-width: 600px;
+    margin: 60px auto; 
+    background-color: #00000053;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.453);
+}
+
+h2 {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+label{
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #ffffff;
+
+}
+input,
+textarea,
+select {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #000;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    font-size: 16px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: calc(100% - 22px); 
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+  

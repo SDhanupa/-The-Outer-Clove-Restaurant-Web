@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="Contact.css">
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+                    const scrollLinks = document.querySelectorAll('.scroll-link');
+                    scrollLinks.forEach(function(link) {
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const targetId = link.getAttribute('href').substring(1);
+                            const targetSection = document.getElementById(targetId);
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        });
+                    });
+                });
+        
+                document.addEventListener('DOMContentLoaded', function() {
+          fetch('get_food_items.php')
+            .then(response => response.json())
+            .then(data => {
+              populateFoodItemOptions(data);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        
+        
+          function populateFoodItemOptions(foodItems) {
+            var selectElement = document.getElementById("foodItemSelect");
+        
+            foodItems.forEach(function(foodItem) {
+              var option = document.createElement("option");
+              option.value = foodItem.product_name; 
+              option.text = foodItem.product_name; 
+              selectElement.add(option);
+            });
+          }
+        
+         
+          document.getElementById("submitOrderButton").addEventListener("click", function() {
+            var orderForm = document.getElementById("orderForm");
+        
+        
+            if (!orderForm.checkValidity()) {
+              alert("Please fill in all the required fields.");
+              return;
+            }
+        
+            var formData = new FormData(orderForm);
+        
+            fetch('submit_order.php', {
+              method: 'POST',
+              body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                
+                alert("Order placed successfully!");
+        
+                
+                orderForm.reset();
+              } else {
+                
+                alert("Error: " + data.message);
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+          });
+        });
+        
+        
+        
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById('contactForm');
+        
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                const formData = new FormData(contactForm);
+        
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Feedback submitted successfully!');
+                        contactForm.reset();
+                    } else {
+                        alert('Error submitting feedback. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An unexpected error occurred. Please try again.');
+                });
+            });
+        });
+                
+    </script>
+
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <div class="nav-bg"></div>
+
+    <section class="contact-section">
+        <h2 class="contact-title">Contact The Outer Clove</h2>
+
+        <img class="contact-image" src="menu/TW_Contact_Us.png" alt="Restaurant Image">
+
+        <p class="contact-description">
+            Have questions or want to get in touch with us? Feel free to reach out using the contact information below.
+        </p>
+
+        <div class="contact-info">
+            <div class="contact-info-box">
+                <h3 class="contact-info-title">Location</h3>
+                <p class="contact-info-detail">123 Main Street, Colombo</p>
+            </div>
+            <div class="contact-info-box">
+                <h3 class="contact-info-title">Phone</h3>
+                <p class="contact-info-detail">+1234567890</p>
+            </div>
+            <div class="contact-info-box">
+                <h3 class="contact-info-title">Email</h3>
+                <p class="contact-info-detail">info@OuterClover.com</p>
+            </div>
+        </div>
+    </section>
+    <section id="contactSection">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="submit_feedback.php" method="post">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+    
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+
+
+</body>
+</html>
